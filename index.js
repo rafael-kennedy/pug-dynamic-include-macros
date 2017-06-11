@@ -25,6 +25,9 @@ mixin ${v.name}`
         files = files.sort(v.sortFunc)
       }
       files.forEach((f, i) => {
+        if (v.filter && v.filter[0] !== ":") {
+          v.filter = ":" + v.filter
+        }
         outStr += `
 mixin ${v.name}${i}
   include${v.filter || ""} ${v.directory}${f}
@@ -46,7 +49,7 @@ mixin ${v.name}${i}
       if (err) {
         reject(err)
       } else {
-        resolve()
+        resolve(outStr, inObj)
       }
     })
   })
