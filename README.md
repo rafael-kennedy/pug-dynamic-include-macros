@@ -16,6 +16,7 @@ exports.hooks = {
       directories: [
         {
           name: 'mixinNamePrefix',
+          root: 'app/'
           directory: 'app/content/something',
           filter: ':markdown-it',
           sortFunc: function(a,b) {
@@ -43,6 +44,8 @@ name *string* __required__: the name of the include mixin that will be generated
 directory *string* __required__: the path to the directory (can use path() function) that you want to use to generate a mixin from
 
 filter *string* __optional__: a filter string (beginning with `:`) to append to the include.
+
+root *string* __optional__: a part of the path to remove from the actual includes. Useful if the target mixin file is in a subdirectory.
 
 sortFunc: *function* __optional__: a sort function. It will be passed only the filenames (though if you absolutely need to load the full files to sort, you can do that here using node fs.). This is a place you can specify reverse order if you need it, or normalize for things like missing leading zeros.
 
