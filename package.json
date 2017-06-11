@@ -1,0 +1,11 @@
+{
+  "name": "pug-dynamic-include-macros",
+  "version": "1.0.0",
+  "description": "A package for dynamically generating pug include mixins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Kennedy",
+  "license": "MIT"
+}
